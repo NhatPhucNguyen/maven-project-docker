@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    tools {
-        maven 'MAVEN'
-        jdk 'JDK'
-    }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('ea053cf7-3e47-4233-b6cb-289b6a93e8f0')
     }
@@ -11,14 +7,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the code from your version control system
-                git branch: 'main', url: 'https://github.com/NhatPhucNguyen/maven-project-docker.git'
+                git branch:'main',url:'https://github.com/NhatPhucNguyen/maven-project-docker.git'
             }
         }
 
         stage('Build Maven Project') {
             steps {
                 // Run Maven build
-                bat 'mvn clean install'
+                bat 'mvn clean package'
             }
         }
 
