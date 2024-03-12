@@ -4,9 +4,6 @@ pipeline {
         maven 'MAVEN'
         jdk 'JDK'
     }
-    environments{
-        DOCKERHUB_CREDENTIALS = credentials('ea053cf7-3e47-4233-b6cb-289b6a93e8f0')
-    }
     stages {
         stage('Checkout') {
             steps {
