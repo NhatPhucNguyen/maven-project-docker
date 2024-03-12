@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the code from your version control system
-                git 'https://github.com/NhatPhucNguyen/maven-project.git'
+                git 'https://github.com/NhatPhucNguyen/maven-project-docker.git'
             }
         }
 
